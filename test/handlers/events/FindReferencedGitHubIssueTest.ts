@@ -30,15 +30,15 @@ describe("FindReferencedGitHubIssue", () => {
             addressChannels(msg: string | SlackMessage,
                             channelNames: string | string[],
                             options?: MessageOptions): Promise<any> {
-                assert.deepEqual(channelNames,["general"]);
+                assert.deepEqual(channelNames, ["general"]);
                 assert(msg === "You crushed #433 with commit `atomist-blogs/event-handler@sfs24wf`");
                 return Promise.resolve();
-            }
+            },
         };
 
         const ctx: any = {
             messageClient: mockMessageClient,
-        }
+        };
 
         const payload: any = { data: {
             Commit: [{
@@ -68,12 +68,12 @@ describe("FindReferencedGitHubIssue", () => {
                             options?: MessageOptions): Promise<any> {
                 assert.fail("Shouldn't get called");
                 return Promise.resolve();
-            }
+            },
         };
 
         const ctx: any = {
             messageClient: mockMessageClient,
-        }
+        };
 
         const payload: any = { data: {
             Commit: [{
